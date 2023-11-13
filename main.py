@@ -1,5 +1,6 @@
 import flet as ft
 from tools import base64converter
+from tools import ping
 
 HEIGHT = 500
 
@@ -15,7 +16,10 @@ def main(page: ft.Page):
     tool_cards_view = ft.ListView(expand=1, spacing=10, padding=20, width=10)
     tool_ui_container = ft.Container(content=ft.Text("Выберите инструмент..."))
     
-    available_tools = [base64converter.Base64Converter(pg_tool_ui=tool_ui_container, pg=page)]
+    available_tools = [
+            base64converter.Base64Converter(pg_tool_ui=tool_ui_container, pg=page),
+            ping.Ping(pg_tool_ui=tool_ui_container, pg=page)
+        ]
         
     for tool in available_tools:
         tool_cards_view.controls.append(tool.tool_card)

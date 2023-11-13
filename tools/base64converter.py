@@ -21,6 +21,7 @@ class Base64Converter(Tool):
                                   ],
                              wrap=True),
                     
+                    flet.Divider(height=10, color="white"),
                     
                     self.base64_field,
                     flet.Row(controls=[
